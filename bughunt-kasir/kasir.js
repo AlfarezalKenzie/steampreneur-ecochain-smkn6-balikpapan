@@ -63,7 +63,7 @@ function tambahItem(keranjang, kode, qty) {
       kode: produk.kode,
       nama: produk.nama,
       harga: produk.harga,
-      qty: qty,
+      qty: jumlah,
     });
   }
   return keranjang;
@@ -86,16 +86,18 @@ function hitungSubtotal(keranjang) {
 function persenBulat(nilai, persen) {
   return Math.floor((nilai * persen + 50) / 100);
 }
-// Diskon belanja dan diskon member.
+// Diskon (tidak digabung, hanya satu yang berlaku):
+// - member: 10% dari subtotal
+// - bukan member dengan subtotal minimal Rp100.000: 5% dari subtotal
+// - selain itu: tidak ada diskon
 function hitungDiskon(subtotal, member) {
-  let diskon = 0;
-  if (subtotal > 100000) {
-    diskon += (subtotal * 5) / 100;
-  }
   if (member) {
-    diskon += (subtotal * 10) / 100;
+    return persenBulat(subtotal, 10);
   }
-  return Math.round(diskon);
+  if (subtotal >= 100000) {
+    return persenBulat(subtotal, 5);
+  }
+  return 0;
 }
 
 // PPN 11% dari dasar pengenaan pajak (subtotal setelah diskon).
