@@ -19,6 +19,9 @@ const MENU = [
 function cariProduk(kode) {
   return MENU.find((p) => p.kode === kode);
 }
+//Perbaikan Bug 1
+const QTY_MIN = 1;
+const QTY_MAX = 99;
 
 // Menambahkan produk ke keranjang.
 // Jika produk sudah ada di keranjang, jumlahnya ditambahkan.
