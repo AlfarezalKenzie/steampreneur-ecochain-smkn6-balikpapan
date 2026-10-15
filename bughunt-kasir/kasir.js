@@ -72,7 +72,12 @@ function hitungSubtotal(keranjang) {
   }
   return subtotal;
 }
-
+// Persentase dari nilai rupiah bulat, dibulatkan ke rupiah terdekat
+// (0,5 ke atas naik). Memakai hitungan bilangan bulat agar tidak terkena
+// kesalahan pecahan desimal.
+function persenBulat(nilai, persen) {
+  return Math.floor((nilai * persen + 50) / 100);
+}
 // Diskon belanja dan diskon member.
 function hitungDiskon(subtotal, member) {
   let diskon = 0;
@@ -87,7 +92,8 @@ function hitungDiskon(subtotal, member) {
 
 // PPN 11% dari dasar pengenaan pajak (subtotal setelah diskon).
 function hitungPPN(dasar) {
-  return Math.floor((dasar * 11) / 100);
+  return persenBulat //bugMath.floor
+  (dasar, 11) //bug / 100);
 }
 
 function hitungRingkasan(keranjang, member) {
@@ -100,6 +106,13 @@ function hitungRingkasan(keranjang, member) {
 }
 
 function hitungKembalian(total, bayar) {
+  //Bug 
+   if (!Number.isFinite(bayar)) {
+    throw new Error("Uang pembayaran tidak valid");
+  }
+  if (bayar < total) {
+    throw new Error("Uang pembayaran kurang");
+  }
   return bayar - total;
 }
 
