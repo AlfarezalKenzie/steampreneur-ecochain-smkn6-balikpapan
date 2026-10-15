@@ -1,0 +1,64 @@
+
+ RUN  v5.0.3 /tmp/v3/web-dashboard
+
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: validasi (langkah 2 rencana) > form kosong lalu klik catat menampilkan pesan kesalahan di keempat kolom, dan tidak mencatat 416ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: validasi (langkah 2 rencana) > pesan kesalahan tidak muncul sebelum tombol diklik 16ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: validasi (langkah 2 rencana) > berat 0 menampilkan pesan kustom di bawah kolom (bukan gelembung bawaan browser) 441ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: validasi (langkah 2 rencana) > memilih 'Lainnya (isi manual)' memunculkan kolom jarak yang wajib diisi 341ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: estimasi dan ringkasan (langkah 2 rencana) > Samarinda, 1850 kg, Truk Diesel menampilkan estimasi 24,15 kg CO2e, walau referensi pesanan belum diisi 170ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: estimasi dan ringkasan (langkah 2 rencana) > estimasi berubah mengikuti moda yang dipilih 149ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: estimasi dan ringkasan (langkah 2 rencana) > panel 'Yang akan dicatat' menampilkan isian saat diketik 255ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: mencatat (langkah 2 rencana) > isian valid dicatat: muncul di 'Tercatat hari ini' dan form kembali kosong 251ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: mencatat (langkah 2 rencana) > entri berikutnya mendapat nomor urut berikutnya dan tampil paling atas 420ms
+ ✓ tes/components/shipment-entry-form.test.tsx > Form Catat Pengiriman: mencatat (langkah 2 rencana) > referensi pesanan tetap wajib untuk mencatat walau estimasi sudah tampil 176ms
+ ✓ tes/components/dashboard-components.test.tsx > Sidebar (langkah 1 rencana) > menampilkan empat menu utama dengan tautan yang benar 557ms
+ ✓ tes/components/dashboard-components.test.tsx > Sidebar (langkah 1 rencana) > 'Pelacakan Kurir' tampil nonaktif berlabel 'Perlu validasi' dan bukan tautan 193ms
+ ✓ tes/components/dashboard-components.test.tsx > ShipmentsTable (langkah 3 dan 4 rencana) > menampilkan enam pesanan 112ms
+ ✓ tes/components/dashboard-components.test.tsx > ShipmentsTable (langkah 3 dan 4 rencana) > baris tanpa moda: 'Belum dicatat', latar berwarna, CO2e berupa tanda '—' 51ms
+ ✓ tes/components/dashboard-components.test.tsx > ShipmentsTable (langkah 3 dan 4 rencana) > baris lengkap menampilkan moda dan emisi, tanpa penanda 24ms
+ ✓ tes/components/dashboard-components.test.tsx > MetricsStrip (langkah 3 rencana) > menampilkan empat metrik 17ms
+ ✓ tes/components/dashboard-components.test.tsx > MetricsStrip (langkah 3 rencana) > 'Moda belum dicatat' bernilai 2, sama dengan jumlah baris bertanda di tabel 17ms
+ ✓ tes/components/dashboard-components.test.tsx > MetricsStrip (langkah 3 rencana) > jika semua pesanan lengkap, tampil 'semua lengkap' 12ms
+ ✓ tes/components/dashboard-components.test.tsx > DownloadReportButton (langkah 5 rencana) > klik menghasilkan file laporan-emisi-oktober-2026.csv berisi judul + 15 baris 54ms
+ ✓ tes/unit/data-and-report.test.ts > konsistensi data contoh > emisi tiap pesanan contoh cocok dengan rumus (toleransi pembulatan 0,05 kg) 3ms
+ ✓ tes/unit/data-and-report.test.ts > konsistensi data contoh > angka 'Moda belum dicatat' di Ringkasan sama dengan jumlah baris tanpa moda di tabel 0ms
+ ✓ tes/unit/data-and-report.test.ts > konsistensi data contoh > rincian per moda berjumlah total bulan ini, pangsa berjumlah 100% 0ms
+ ✓ tes/unit/data-and-report.test.ts > konsistensi data contoh > tren harian berisi 15 titik 1ms
+ ✓ tes/unit/data-and-report.test.ts > konsistensi data contoh > enam pesanan contoh, ID unik 1ms
+ ✓ tes/unit/data-and-report.test.ts > laporan CSV > satu baris judul dan 15 baris data 0ms
+ ✓ tes/unit/data-and-report.test.ts > laporan CSV > nama file mengikuti bulan laporan 0ms
+ ✓ tes/unit/data-and-report.test.ts > format angka > memakai pemisah desimal koma ala Indonesia 17ms
+ ✓ tes/unit/data-and-report.test.ts > format angka > kg di bawah 1.000, ton mulai 1.000 kg 1ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > form kosong: keempat kolom wajib menampilkan pesan 3ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > isian valid tidak menghasilkan error 1ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > berat "0" ditolak 1ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > berat "-5" ditolak 0ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > berat "abc" ditolak 0ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > berat " " ditolak 0ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > berat "Infinity" ditolak 0ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > referensi pesanan berisi spasi saja dianggap kosong 0ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > tujuan 'Lainnya' mewajibkan jarak lebih dari 0 1ms
+ ✓ tes/unit/shipment-form.test.ts > validateShipmentForm > tujuan rute umum tidak meminta jarak manual 0ms
+ ✓ tes/unit/shipment-form.test.ts > resolveDistanceKm / parseWeightKg > memakai jarak rute umum 0ms
+ ✓ tes/unit/shipment-form.test.ts > resolveDistanceKm / parseWeightKg > memakai jarak manual untuk 'Lainnya' 0ms
+ ✓ tes/unit/shipment-form.test.ts > resolveDistanceKm / parseWeightKg > null bila belum valid 0ms
+ ✓ tes/unit/shipment-form.test.ts > canEstimate > estimasi tidak menunggu referensi pesanan (pemeriksaan langkah 2 di rencana) 0ms
+ ✓ tes/unit/shipment-form.test.ts > canEstimate > estimasi menunggu tujuan, berat, dan moda 0ms
+ ✓ tes/unit/shipment-form.test.ts > daftar rute umum > jarak rute umum sesuai spesifikasi dan hanya 'Lainnya' tanpa jarak 0ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > contoh di spesifikasi: 1.850 kg, 122 km, Truk Diesel = 24,15 kg 3ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > 420 kg x 14 km (truck_diesel) = 0.6292 kg CO2e 0ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > 3100 kg x 310 km (ship_cargo) = 7.688 kg CO2e 0ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > 1000 kg x 100 km (truck_diesel) = 10.7 kg CO2e 1ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > 1000 kg x 500 km (air_freight) = 301 kg CO2e 0ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > berskala linear terhadap berat dan jarak 0ms
+ ✓ tes/unit/emission.test.ts > estimateCO2eKg (rumus inti) > urutan emisi: udara > truk > kapal untuk beban dan jarak sama 1ms
+
+ Test Files  5 passed (5)
+      Tests  51 passed (51)
+   Start at  12:22:33
+   Duration  13.31s (environment 51%, tests 31%, setup 9%, import 4%, transform 4%, worker 1%)
+
+Environment  jsdom was created 5 times · 6.14s total, 51% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

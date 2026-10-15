@@ -1,0 +1,26 @@
+
+ RUN  v5.0.3 /tmp/v3/web-dashboard
+
+ ✓ tes/components/shipment-entry-form.test.tsx (10 tests) 2750ms
+   ✓ Form Catat Pengiriman: validasi (langkah 2 rencana) (4)
+     ✓ form kosong lalu klik catat menampilkan pesan kesalahan di keempat kolom, dan tidak mencatat 489ms
+     ✓ berat 0 menampilkan pesan kustom di bawah kolom (bukan gelembung bawaan browser) 461ms
+     ✓ memilih 'Lainnya (isi manual)' memunculkan kolom jarak yang wajib diisi 370ms
+   ✓ Form Catat Pengiriman: mencatat (langkah 2 rencana) (3)
+     ✓ entri berikutnya mendapat nomor urut berikutnya dan tampil paling atas 401ms
+ ✓ tes/components/dashboard-components.test.tsx (9 tests) 954ms
+   ✓ Sidebar (langkah 1 rencana) (2)
+     ✓ menampilkan empat menu utama dengan tautan yang benar 524ms
+ ✓ tes/unit/data-and-report.test.ts (9 tests) 27ms
+ ✓ tes/unit/shipment-form.test.ts (16 tests) 10ms
+ ✓ tes/unit/emission.test.ts (7 tests) 7ms
+
+ Test Files  5 passed (5)
+      Tests  51 passed (51)
+   Start at  12:22:18
+   Duration  14.14s (environment 46%, tests 28%, import 11%, setup 8%, transform 5%, worker 1%)
+
+Environment  jsdom was created 5 times · 6.09s total, 46% of tracked time
+             create it once per worker with pool: 'vmThreads' (keeps per-file isolation) or isolate: false (shares it across files)
+             learn more: https://vitest.dev/guide/improving-performance#test-environments
+

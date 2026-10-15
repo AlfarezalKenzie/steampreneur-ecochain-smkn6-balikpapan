@@ -1,0 +1,16 @@
+
+ RUN  v5.0.3 /tmp/verify/carbon-engine
+
+ ✓ tests/integration/http.test.ts (32 tests) 370ms
+ ✓ tests/unit/use-cases.test.ts (12 tests) 40ms
+ ✓ tests/unit/domain.test.ts (21 tests) 18ms
+ ↓ tests/integration/postgres.test.ts (4 tests | 4 skipped)
+
+ Test Files  3 passed | 1 skipped (4)
+      Tests  65 passed | 4 skipped (69)
+   Start at  12:22:51
+   Duration  3.30s (import 71%, tests 17%, transform 12%, worker 1%)
+
+    Isolate  4 workers spawned · ~163ms startup each (spawn + environment, per file)
+             at least ~490ms faster with isolate: false — reuses workers across files instead of one per file
+
