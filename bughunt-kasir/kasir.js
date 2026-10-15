@@ -23,6 +23,22 @@ function cariProduk(kode) {
 const QTY_MIN = 1;
 const QTY_MAX = 99;
 
+function validasiQty(qty) {
+  let angka;
+  if (typeof qty === "number") {
+    angka = qty;
+  } else if (typeof qty === "string" && /^[+-]?\d+(\.\d+)?$/.test(qty.trim())) {
+    angka = Number(qty.trim());
+  } else {
+    angka = NaN;
+  }
+  if (!Number.isInteger(angka) || angka < QTY_MIN || angka > QTY_MAX) {
+    throw new Error(
+      "Jumlah harus bilangan bulat dari " + QTY_MIN + " sampai " + QTY_MAX
+    );
+  }
+  return angka;
+}
 // Menambahkan produk ke keranjang.
 // Jika produk sudah ada di keranjang, jumlahnya ditambahkan.
 function tambahItem(keranjang, kode, qty) {
