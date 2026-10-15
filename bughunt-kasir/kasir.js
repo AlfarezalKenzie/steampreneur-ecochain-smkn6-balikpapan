@@ -19,10 +19,12 @@ const MENU = [
 function cariProduk(kode) {
   return MENU.find((p) => p.kode === kode);
 }
-//Perbaikan Bug 1
+
+//Perbaikan Bug 
 const QTY_MIN = 1;
 const QTY_MAX = 99;
-
+// Mengubah jumlah dari kolom isian (bisa berupa teks) menjadi bilangan bulat
+// 1..99. Jumlah kosong, nol, negatif, pecahan, atau bukan angka ditolak.
 function validasiQty(qty) {
   let angka;
   if (typeof qty === "number") {
@@ -46,11 +48,17 @@ function tambahItem(keranjang, kode, qty) {
   if (!produk) {
     throw new Error("Produk tidak ditemukan");
   }
-
+  // Jika ada yang ditolak, keranjang tidak diubah sama sekali.
+   const jumlah = validasiQty(qty);
+  
   const itemLama = keranjang.find((i) => i.kode === kode);
   if (itemLama) {
-    itemLama.qty += qty;
-  } else {
+    if (itemLama.qty + jumlah > QTY_MAX) {
+      throw new Error(
+        "Total jumlah per produk tidak boleh lebih dari " + QTY_MAX
+        );
+  itemLama.qty += jumlah;
+    } else {
     keranjang.push({
       kode: produk.kode,
       nama: produk.nama,
